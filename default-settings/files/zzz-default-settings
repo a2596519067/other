@@ -25,8 +25,8 @@ sed -i "s/# //g" /etc/opkg/distfeeds.conf
 # 更改ipk源
 sed -i 's#downloads.openwrt.org#mirrors.cloud.tencent.com/lede#g' /etc/opkg/distfeeds.conf
 # 设置默认密码admin
-sed -i 's/root::0:0:99999:7:::/root:$1$wEehtjxj$YBu4quNfVUjzfv8p\/PBo5.:0:0:99999:7:::/g' /etc/shadow
-sed -i 's/root:::0:99999:7:::/root:$1$wEehtjxj$YBu4quNfVUjzfv8p\/PBo5.:0:0:99999:7:::/g' /etc/shadow
+# sed -i 's/root::0:0:99999:7:::/root:$1$wEehtjxj$YBu4quNfVUjzfv8p\/PBo5.:0:0:99999:7:::/g' /etc/shadow
+# sed -i 's/root:::0:99999:7:::/root:$1$wEehtjxj$YBu4quNfVUjzfv8p\/PBo5.:0:0:99999:7:::/g' /etc/shadow
 # 设置DHCP
 uci set dhcp.lan.ra='server'
 uci set dhcp.lan.dhcpv6='server'
@@ -39,10 +39,9 @@ uci delete dhcp.lan.dhcpv6
 uci delete dhcp.lan.ndp
 uci commit dhcp
 
-uci set network.lan.ipaddr='10.32.0.1'
+uci set network.lan.ipaddr='10.0.0.1'
 uci set network.lan.netmask='255.255.255.0'
-uci set network.lan.gateway='10.32.0.1'
-uci set network.lan.dns='223.5.5.5 223.6.6.6 119.29.29.29 114.114.114.114 8.8.8.8'
+uci set network.lan.gateway='10.0.0.1'
 uci set network.lan.ip6assign='64'
 uci set network.lan.ifname='eth0'
 uci commit network

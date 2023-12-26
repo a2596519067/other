@@ -25,8 +25,8 @@ sed -i "s/# //g" /etc/opkg/distfeeds.conf
 # 更改ipk源
 sed -i 's#downloads.openwrt.org#mirrors.cloud.tencent.com/lede#g' /etc/opkg/distfeeds.conf
 # 设置默认密码admin
-# sed -i 's/root::0:0:99999:7:::/root:$1$wEehtjxj$YBu4quNfVUjzfv8p\/PBo5.:0:0:99999:7:::/g' /etc/shadow
-# sed -i 's/root:::0:99999:7:::/root:$1$wEehtjxj$YBu4quNfVUjzfv8p\/PBo5.:0:0:99999:7:::/g' /etc/shadow
+sed -i 's/root::0:0:99999:7:::/root:$1$8fyTgKPa$kMYMPcbeTBTV.9Q2moCYo.:19717:0:99999:7:::/g' /etc/shadow
+sed -i 's/root:::0:99999:7:::/root:$1$8fyTgKPa$kMYMPcbeTBTV.9Q2moCYo.:19717:0:99999:7:::/g' /etc/shadow
 # 设置DHCP
 uci set dhcp.lan.ra='server'
 uci set dhcp.lan.dhcpv6='server'

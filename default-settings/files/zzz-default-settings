@@ -34,14 +34,8 @@ uci set dhcp.lan.ra_management='1'
 uci set dhcp.lan.ra_default='1'
 #uci set dhcp.@dnsmasq[0].localservice=0
 #uci set dhcp.@dnsmasq[0].nonwildcard=0
-uci delete dhcp.lan.ra
-uci delete dhcp.lan.dhcpv6
-uci delete dhcp.lan.ndp
 uci commit dhcp
 
-uci set network.lan.ipaddr='10.0.0.1'
-uci set network.lan.netmask='255.255.255.0'
-uci set network.lan.gateway='10.0.0.1'
 uci set network.lan.ip6assign='64'
 uci set network.lan.ifname='eth0'
 uci commit network
